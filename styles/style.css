@@ -89,3 +89,38 @@ footer {
     background-color: var(--color3);
     box-shadow: var(--shadow);
 }
+
+.top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    padding-bottom: 50px;;
+}
+
+.right {
+    text-align: center;
+    padding-left: 50px;
+}
+
+.options {
+    display: flex;
+}
+
+.bottom {
+    width:100%;
+    border-top: solid 1px black;
+   
+}
+
+input{
+    display:flex;
+    flex-direction: column;
+}
+.past-poll {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border: solid 1px black;
+}
