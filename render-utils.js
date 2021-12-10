@@ -1,19 +1,31 @@
 export function renderPastPoll(pastPoll) {
-    const container = document.createElement('div');
+    const pastPollEl = document.createElement('div');
     const pQuestionEl = document.createElement('p');
-    const pTitleA = document.createElement('p');
-    const pTitleB = document.createElement('p');
-    const pVotesA = document.createElement('p');
-    const pVotesB = document.createElement('p');
+    const pPollA = renderOption(pastPoll.optionATitle, pastPoll.optionAVotes);
+    const pPollB = renderOption(pastPoll.optionBTitle, pastPoll.optionBVotes);
 
-    container.classList.add('past-poll');
+    pastPollEl.classList.add('past-poll');
     pQuestionEl.textContent = pastPoll.question;
-    pTitleA.textContent = pastPoll.optionATitle;
-    pTitleB.textContent = pastPoll.optionBTitle;
-    pVotesA.textContent = pastPoll.optionAVotes;
-    pVotesB.textContent = pastPoll.optionBVotes;
+   
+    pastPollEl.append(pQuestionEl, pPollA, pPollB);
 
-    container.append(pQuestionEl, pTitleA, pVotesA, pTitleB, pVotesB);
-
-    return container;
+    return pastPollEl;
 }
+
+export function renderOption(title, votes) {
+    const pastDiv = document.createElement('div');
+    const pastTitleEl = document.createElement('p');
+    const pastVotesEl = document.createElement('p');
+
+    pastDiv.classList.add('past-div');
+    pastTitleEl.classList.add('past-title');
+    pastVotesEl.classList.add('past-votes');
+
+    pastTitleEl.textContent = title;
+    pastVotesEl.textContent = votes;
+
+    pastDiv.append(pastTitleEl, pastVotesEl);
+
+    return pastDiv;
+}
+
